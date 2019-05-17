@@ -25,8 +25,41 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
-    }    
+        adapter = new WeatherAdapter();
+        adapter.notifyDataSetChanged();
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        edtCity = findViewById(R.id.editCity);
+        progressBar = findViewById(R.id.progressBar);
+
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel.getListWeathers().observe(this, getWeather);
+
+        findViewById(R.id.btnCity).setOnClickListener(myListener);
+    }
+
+    private Observer<ArrayList<WeatherItems>> getWeather = new Observer<ArrayList<WeatherItems>>() {
+        @Override
+        public void onChanged(ArrayList<WeatherItems> weatherItems) {
+            if (weatherItems != null) {
+                adapter.setData(weatherItems);
+                showLoading(false);
+            }
+        }
+    };
+
+    View.OnClickListener myListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String city = edtCity.getText().toString();
+            if (TextUtils.isEmpty(city)) return;
+            mainViewModel.setWeather(city);
+            showLoading(true);
+        }
+    };
 
     private void showLoading(Boolean state) {
         if (state) {

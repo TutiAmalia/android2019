@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "8c0ad95b-155c-45db-9466-ae6f046452ba",
+		"name": "Mobile Programming Assignment API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "superhero API -> Search \"captain\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://www.superheroapi.com/api.php/10158812845229199/search/captain",
+					"protocol": "https",
+					"host": [
+						"www",
+						"superheroapi",
+						"com"
+					],
+					"path": [
+						"api.php",
+						"10158812845229199",
+						"search",
+						"captain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AudioDB Lagu Trending di iTunes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "theaudiodb.com/api/v1/json/1/trending.php?country=us&type=itunes&format=singles",
+					"host": [
+						"theaudiodb",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"json",
+						"1",
+						"trending.php"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "us"
+						},
+						{
+							"key": "type",
+							"value": "itunes"
+						},
+						{
+							"key": "format",
+							"value": "singles"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MovieDB -> Daftar Film Populer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://api.themoviedb.org/3/tv/popular?api_key=b2040c23e991b52a42a0e5eb1f991e8c&language=en-US&page=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"tv",
+						"popular"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "b2040c23e991b52a42a0e5eb1f991e8c"
+						},
+						{
+							"key": "language",
+							"value": "en-US"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TheSportsDB -> Daftar Team Sepakbola di Premiere League (4328)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4328",
+					"protocol": "https",
+					"host": [
+						"www",
+						"thesportsdb",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"json",
+						"1",
+						"lookup_all_teams.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4328"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Food2Fork -> Daftar Resep Menggunakan bahan tertentu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://www.food2fork.com/api/search?key=e4e60b249569856ce14fe54d325249fe&q=noodle",
+					"protocol": "https",
+					"host": [
+						"www",
+						"food2fork",
+						"com"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "e4e60b249569856ce14fe54d325249fe"
+						},
+						{
+							"key": "q",
+							"value": "noodle"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Google API -> Book list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://www.googleapis.com/books/v1/volumes?q=big+data&maxResults=30",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"books",
+						"v1",
+						"volumes"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "big+data"
+						},
+						{
+							"key": "maxResults",
+							"value": "30"
+						}
+					]
+				},
+				"description": "menampilkan hasil search buku \"big data\" dengan maximal hasil pencarian 30"
+			},
+			"response": []
+		}
+	]
+}

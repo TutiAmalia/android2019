@@ -11,7 +11,23 @@ public class WeatherItems {
     private String description;
     private String temperature;
 
-   
+    public WeatherItems(JSONObject object) {
+        try {
+            int id = object.getInt("id");
+            String name = object.getString("name");
+            String currentWeather = object.getJSONArray("weather").getJSONObject(0).getString("main");
+            String description = object.getJSONArray("weather").getJSONObject(0).getString("description");
+            double tempInCelsius = object.getJSONObject("main").getDouble("temp");
+            String temperature = new DecimalFormat("##.##").format(tempInCelsius);
+            this.id = id;
+            this.name = "Nama Kota: " + name;
+            this.currentWeather = currentWeather;
+            this.description = description;
+            this.temperature = "suhu: "+temperature + " C";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public int getId() {
         return id;
